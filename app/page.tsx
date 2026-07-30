@@ -24,7 +24,27 @@ const frontPagePaths = [
   "/stories/cashmere-king-future-unsure",
   "/stories/golden-state-no-more",
   "/stories/forest-monkies",
+  "/stories/sac-issues",
+  "/stories/tips-of-the-job-trade",
+  "/stories/gamers-global-warming-ai",
+  "/stories/directed-energy-and-you",
+  "/stories/gas",
+  "/stories/convention-watch",
+  "/stories/local-artist-spotlight",
 ].map(getLegacyPage).filter((page) => page !== undefined);
+
+const bulletinLinks = [
+  ["Safety survey results", "/home/public-safety-survey-results"],
+  ["Upcoming events", "/stories/local-artist-spotlight/upcoming-events"],
+  ["Featured artists", "/stories/local-artist-spotlight/featured-artists"],
+  ["Hot Street Finance", "/hot-street/hot-street-finance"],
+  ["Hot Street Crypto", "/hot-street/hot-street-crypto"],
+  ["Community crime map", "/hot-street/hot-street-crime"],
+  ["The Team", "/about/the-team"],
+  ["Headquarters", "/about/headquarters"],
+  ["Intimate Chat", "/home/user-feedback"],
+  ["Live field reports", "/live"],
+] as const;
 
 function StoryMeta({ byline, minutes }: { byline: string; minutes: string }) {
   return (
@@ -45,7 +65,7 @@ export default function Home() {
         <div className="page-shell utility-inner">
           <span>{dateLabel}</span>
           <span className="utility-edition">Sacramento Edition</span>
-          <span className="weather"><i />89° Clear</span>
+          <span className="weather"><i />Live Weather Desk</span>
         </div>
       </div>
 
@@ -148,14 +168,40 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="weather-tracker">
+          <div className="weather-tracker-heading">
+            <div>
+              <p className="kicker">Live Atmospheric Desk</p>
+              <h2>Sacramento Weather Tracker</h2>
+            </div>
+            <p>Radar, wind, pressure and developing conditions across the valley.</p>
+          </div>
+          <div className="weather-tracker-grid">
+            <iframe
+              src="https://embed.windy.com/embed2.html?lat=38.582&lon=-121.494&detailLat=38.582&detailLon=-121.494&width=1200&height=650&zoom=7&level=surface&overlay=radar&product=radar&menu=true&message=true&marker=true&calendar=now&pressure=true&type=map&location=coordinates&detail=true&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1"
+              title="Live Sacramento weather radar and atmospheric tracker"
+              loading="lazy"
+              allowFullScreen
+            />
+            <aside>
+              <span>Weather Desk</span>
+              <Link href="/home/drought-watch">Drought Watch <b>→</b></Link>
+              <Link href="/stories/golden-state-no-more">Golden State No More? <b>→</b></Link>
+              <Link href="/stories/hydrogen-found-in-city-water-supply">Water Supply Desk <b>→</b></Link>
+              <Link href="/live">Live Reports <b>→</b></Link>
+              <small>Interactive map provided by Windy. Select layers and timeline controls directly on the tracker.</small>
+            </aside>
+          </div>
+        </section>
+
         <section className="front-page-depth">
           <div className="section-heading">
             <h2>More From Sacramento</h2>
             <Link href="/stories">Descend into the newsroom →</Link>
           </div>
           <div className="front-page-story-grid">
-            {frontPagePaths.map((page) => (
-              <article className="front-page-story-card" key={page.path}>
+            {frontPagePaths.map((page, index) => (
+              <article className={`front-page-story-card story-shape-${index % 7}`} key={page.path}>
                 {page.images[0] && <Link href={page.path}><img src={page.images[0].src} alt="" loading="lazy" /></Link>}
                 <p className="kicker">{getLegacySection(page)}</p>
                 <h3><Link href={page.path}>{getLegacyTitle(page)}</Link></h3>
@@ -168,9 +214,9 @@ export default function Home() {
 
         <section className="maze-section">
           <div>
-            <p className="kicker">Choose Your Route</p>
-            <h2>The SSR news labyrinth</h2>
-            <p>Every corridor leads somewhere. Most lead back.</p>
+            <p className="kicker">Elsewhere in SSR</p>
+            <h2>From the other desks</h2>
+            <p>Reports, departments and unexplained objects.</p>
           </div>
           <div className="maze-links">
             <Link href="/taras-batyr">Find Taras batyr</Link>
@@ -182,6 +228,20 @@ export default function Home() {
             <Link href="/about/headquarters">Headquarters</Link>
             <Link href="/shows">Turn on SSR</Link>
             <Link href="/home/drought-watch">Return to Drought Watch</Link>
+          </div>
+        </section>
+
+        <section className="bulletin-board">
+          <div className="bulletin-board-heading">
+            <span>SSR Bulletin Board</span>
+            <small>More items of possible consequence</small>
+          </div>
+          <div className="bulletin-links">
+            {bulletinLinks.map(([label, href], index) => (
+              <Link className={`bulletin-${index % 4}`} href={href} key={href}>
+                <span>{String(index + 1).padStart(2, "0")}</span>{label}
+              </Link>
+            ))}
           </div>
         </section>
 
