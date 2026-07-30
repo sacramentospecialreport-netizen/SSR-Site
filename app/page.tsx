@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SectionLinks, sectionLinks } from "@/components/section-links";
+import { getLegacyPage, getLegacySection, getLegacySummary, getLegacyTitle } from "@/content/legacy-content";
 import { featuredStories, latestStories } from "@/content/legacy-pages";
 
 const dateLabel = new Intl.DateTimeFormat("en-US", {
@@ -9,6 +11,20 @@ const dateLabel = new Intl.DateTimeFormat("en-US", {
   timeZone: "America/Los_Angeles",
 }).format(new Date());
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const frontPagePaths = [
+  "/stories/14-brutal-truths-about-sacramento-ai",
+  "/stories/governors-statement-sheds-light-on-ca",
+  "/stories/will-downtown-be-getting-a-facelift",
+  "/stories/new-anthropological-discovery",
+  "/stories/flea-market-infested-with-ticks-discrepancy-confuses-city-hall",
+  "/stories/alligators-appearing-in-the-american-river",
+  "/stories/monkeypox-a-monkeys-perspective",
+  "/stories/the-cost-of-driving",
+  "/stories/hydrogen-found-in-city-water-supply",
+  "/stories/cashmere-king-future-unsure",
+  "/stories/golden-state-no-more",
+  "/stories/forest-monkies",
+].map(getLegacyPage).filter((page) => page !== undefined);
 
 function StoryMeta({ byline, minutes }: { byline: string; minutes: string }) {
   return (
@@ -38,12 +54,7 @@ export default function Home() {
           <details className="mobile-menu">
             <summary aria-label="Open sections menu"><span /><span /><span /></summary>
             <nav aria-label="Mobile navigation">
-              <Link href="/">Home</Link>
-              <Link href="/stories">Latest</Link>
-              <Link href="/home/drought-watch">Drought Watch</Link>
-              <Link href="/home/public-safety-survey-results">Public Safety</Link>
-              <Link href="/stories/convention-watch">Arts & Culture</Link>
-              <Link href="/about">About</Link>
+              {sectionLinks.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
             </nav>
           </details>
           <div className="masthead-date">
@@ -59,14 +70,7 @@ export default function Home() {
             <Link className="archive-button" href="/stories">Stories</Link>
           </div>
         </div>
-        <nav className="section-nav page-shell" aria-label="Sections">
-          <Link href="/">Home</Link><Link href="/stories">Latest</Link>
-          <Link href="/home/drought-watch">Drought Watch</Link>
-          <Link href="/home/public-safety-survey-results">Public Safety</Link>
-          <Link href="/hot-street">Hot Street</Link>
-          <Link href="/stories/convention-watch">Arts & Culture</Link>
-          <Link href="/shows">Shows</Link><Link href="/about">About</Link>
-        </nav>
+        <SectionLinks />
       </header>
 
       <main id="main" className="page-shell">
@@ -119,7 +123,8 @@ export default function Home() {
 
         <section className="quick-links" aria-label="Special coverage">
           <Link href="/home/drought-watch"><span>Special Report</span><strong>Drought Watch</strong><small>Tracking California&apos;s water crisis →</small></Link>
-          <Link href="/home/public-safety-survey-results"><span>Interactive</span><strong>Public Safety Survey</strong><small>See what Sacramento told us →</small></Link>
+          <Link href="/home/safety-quiz"><span>Interactive</span><strong>Public Safety Quiz</strong><small>Put your street knowledge to the test →</small></Link>
+          <Link href="/sections/arts-culture"><span>After Dark</span><strong>Arts &amp; Culture</strong><small>Conventions, artists and stranger things →</small></Link>
           <Link href="/hot-street"><span>Markets</span><strong>Hot Street</strong><small>Finance, crypto and crime →</small></Link>
         </section>
 
@@ -143,6 +148,43 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="front-page-depth">
+          <div className="section-heading">
+            <h2>More From Sacramento</h2>
+            <Link href="/stories">Descend into the newsroom →</Link>
+          </div>
+          <div className="front-page-story-grid">
+            {frontPagePaths.map((page) => (
+              <article className="front-page-story-card" key={page.path}>
+                {page.images[0] && <Link href={page.path}><img src={page.images[0].src} alt="" loading="lazy" /></Link>}
+                <p className="kicker">{getLegacySection(page)}</p>
+                <h3><Link href={page.path}>{getLegacyTitle(page)}</Link></h3>
+                <p>{getLegacySummary(page)}</p>
+                <Link className="story-button" href={page.path}>Read report →</Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="maze-section">
+          <div>
+            <p className="kicker">Choose Your Route</p>
+            <h2>The SSR news labyrinth</h2>
+            <p>Every corridor leads somewhere. Most lead back.</p>
+          </div>
+          <div className="maze-links">
+            <Link href="/home/truth">Find Taras batyr</Link>
+            <Link href="/home/safety-quiz">Take the quiz</Link>
+            <Link href="/stories/the-guru-of-news-interview">Visit the Guru</Link>
+            <Link href="/stories/forest-monkies">Enter the forest</Link>
+            <Link href="/sections/arts-culture">After dark</Link>
+            <Link href="/hot-street/hot-street-crypto">Follow the money</Link>
+            <Link href="/about/headquarters">Headquarters</Link>
+            <Link href="/shows">Turn on SSR</Link>
+            <Link href="/home/drought-watch">Return to Drought Watch</Link>
+          </div>
+        </section>
+
         <section className="newsletter">
           <div><p className="kicker">The Morning Special</p><h2>Sacramento, explained before your first cup of coffee.</h2></div>
           <div><p>A concise briefing of the stories, people and peculiarities shaping the capital.</p><Link href="/stories">Browse today&apos;s edition</Link></div>
@@ -152,8 +194,8 @@ export default function Home() {
       <footer className="site-footer">
         <div className="page-shell footer-grid">
           <div className="footer-brand"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><p>Sacramento Special Report</p><span>You Heard It Here First.</span></div>
-          <div><h2>Sections</h2><Link href="/home/drought-watch">Drought Watch</Link><Link href="/home/public-safety-survey-results">Public Safety</Link><Link href="/stories/convention-watch">Arts & Culture</Link><Link href="/hot-street">Hot Street</Link></div>
-          <div><h2>Company</h2><Link href="/about">About SSR</Link><Link href="/about/the-team">The Team</Link><Link href="/about/headquarters">Headquarters</Link><a href="mailto:press@sacramentospecialreport.org">Contact</a></div>
+          <div><h2>Sections</h2><Link href="/home/drought-watch">Drought Watch</Link><Link href="/sections/public-safety">Public Safety</Link><Link href="/sections/arts-culture">Arts & Culture</Link><Link href="/hot-street">Hot Street</Link></div>
+          <div><h2>Company</h2><Link href="/about">About SSR</Link><Link href="/about/the-team">The Team</Link><Link href="/about/headquarters">Headquarters</Link><Link href="/contact">Contact</Link></div>
           <div className="footer-contact"><h2>Newsroom</h2><p>1307 N Street, Suite 231</p><p>Sacramento, CA 95814</p><p>916-259-3843</p></div>
         </div>
         <div className="page-shell copyright">

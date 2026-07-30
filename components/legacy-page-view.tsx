@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionLinks } from "@/components/section-links";
 import {
   getLegacyEmbeds,
   getLegacyFlowSections,
@@ -111,21 +112,66 @@ function ShowsProgramming({ page }: { page: LegacyContentPage }) {
   );
 }
 
+function HotStreetProgramming() {
+  const desks = [
+    {
+      href: "/hot-street/hot-street-finance",
+      eyebrow: "Markets",
+      title: "Hot Street Finance",
+      copy: "Live market tickers, charts, technical analysis and SSR's ongoing study of financial gravity.",
+    },
+    {
+      href: "/hot-street/hot-street-crypto",
+      eyebrow: "Digital Currency",
+      title: "Hot Street Crypto",
+      copy: "Cryptocurrency charts, screeners and heat maps from the speculative edge.",
+    },
+    {
+      href: "/hot-street/hot-street-crime",
+      eyebrow: "Public Safety",
+      title: "Hot Street Crime",
+      copy: "Open the community crime map and examine what is happening around Sacramento.",
+    },
+  ];
+  return (
+    <div className="hot-street-programming">
+      <div className="hot-street-grid">
+        {desks.map((desk) => (
+          <Link href={desk.href} className="hot-street-card" key={desk.href}>
+            <span>{desk.eyebrow}</span><h2>{desk.title}</h2><p>{desk.copy}</p><strong>Open desk →</strong>
+          </Link>
+        ))}
+      </div>
+      <div className="hub-link-cloud">
+        <Link href="/sections/public-safety">Public Safety Desk</Link>
+        <Link href="/home/safety-quiz">Safety Quiz</Link>
+        <Link href="/home/drought-watch">Drought Watch</Link>
+        <Link href="/stories/the-cost-of-driving">The Cost of Driving</Link>
+        <Link href="/stories/gas">Gas</Link>
+      </div>
+    </div>
+  );
+}
+
 export function LegacyPageView({ page }: { page: LegacyContentPage }) {
   const title = getLegacyTitle(page);
   const section = getLegacySection(page);
   const flowSections = getLegacyFlowSections(page);
   const related = getRelatedLegacyPages(page);
+  const isArts =
+    page.path.startsWith("/stories/convention-watch") ||
+    page.path.startsWith("/stories/local-artist-spotlight");
 
   return (
-    <>
-      <header className="article-masthead">
+    <div className={isArts ? "arts-section-shell" : undefined}>
+      <header className={`article-masthead${isArts ? " arts-article-masthead" : ""}`}>
         <Link href="/">
           <img src={`${assetBase}/legacy/ssr-logo.png`} alt="" />
           <span>Sacramento Special Report</span>
         </Link>
+        <SectionLinks className="article-section-nav" />
       </header>
-      <main className="legacy-report-page">
+      <main className={`legacy-report-page${isArts ? " arts-legacy-report" : ""}`}>
         <Link className="article-back" href="/">← Back to the front page</Link>
         <p className="kicker">{section}</p>
         <h1>{title}</h1>
@@ -137,6 +183,8 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
 
         {page.path === "/shows" ? (
           <ShowsProgramming page={page} />
+        ) : page.path === "/hot-street" ? (
+          <HotStreetProgramming />
         ) : (
         <div className="legacy-report-grid">
           <article className="legacy-report-copy">
@@ -161,6 +209,16 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
                     flowIndex > 0 &&
                     block.length < 100 &&
                     !/[.!?]$/.test(block);
+                  if (page.path === "/home/drought-watch" && block.startsWith("Drought Got You Down?")) {
+                    return (
+                      <p className="legacy-pathway-link" key={block}>
+                        <Link href="/home/truth">{block} →</Link>
+                      </p>
+                    );
+                  }
+                  if (block.startsWith("NOTHING IN THE SITE CONSTITUTES")) {
+                    return <p className="legal-microcopy" key={`${block}-${blockIndex}`}>{block}</p>;
+                  }
                   return isSubhead ? <h2 key={block}>{block}</h2> : <p key={`${block}-${blockIndex}`}>{block}</p>;
                 })}
                 {flow.embeds.length > 0 && (
@@ -198,6 +256,6 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
           </section>
         )}
       </main>
-    </>
+    </div>
   );
 }
