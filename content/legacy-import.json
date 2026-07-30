@@ -4,7 +4,8 @@
     "iframes": [
       {
         "src": "https://www.youtube.com/embed/QSstL0oo2P8?embed_config=%7B%22enc%22:%22AXH1ezk1wMYKxXSkmVbdZxkms9aJ9umB1NTz0tZxnYXWrDx1fHWJo3afUPXfvY_9W9NDEzKvd0eCxWQU4JLRjtZlOhdIwRvuvML-_1jUh404mODXdjzp-fGY1DLnHGdbRjG8FqmKHmicYjPoOOF757YFzTw_fTRqWXgG4aVO9SC1J3Kmquk_T-APOz2j9PkpU8esaecckkAyw2eK0nK9EgnyNwXFc8w0n6VZ4EkL543Bh7YEQM1IuFe-rpEiBqvPdKIiuMewLnVAyIqGEH9xrVP_lQ1FFY-Xs2Ilv4jj5CLNVdQJf4J1dwLwDrlpR38mBGeNWXhWt9Fs6ZWGoIZPjdinENNQEc91lZXcKIquVqkfWg0%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 2
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -14,19 +15,23 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/372c9877752de91c.jpg"
+        "src": "/legacy-import/372c9877752de91c.jpg",
+        "sectionIndex": 5
       },
       {
         "alt": "",
-        "src": "/legacy-import/8e0945514005765e.jpg"
+        "src": "/legacy-import/8e0945514005765e.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/278be565840522fe.png"
+        "src": "/legacy-import/278be565840522fe.png",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/8ca9e28a4e412604.gif"
+        "src": "/legacy-import/8ca9e28a4e412604.gif",
+        "sectionIndex": 9
       }
     ],
     "path": "/home",
@@ -84,7 +89,8 @@
     "iframes": [
       {
         "src": "https://docs.google.com/forms/d/e/1FAIpQLScqNCZmE2mmoCvsG-G-V7J3MppVaGPsT9Qen-g_PHmujJFP-Q/viewform?embedded=true",
-        "title": ""
+        "title": "",
+        "sectionIndex": 0
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -106,7 +112,8 @@
     "iframes": [
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=746487349",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 2
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -116,55 +123,68 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/8635e8fa0c14c92e.jpg"
+        "src": "/legacy-import/8635e8fa0c14c92e.jpg",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/714d85e070a61d84.jpg"
+        "src": "/legacy-import/714d85e070a61d84.jpg",
+        "sectionIndex": 5
       },
       {
         "alt": "",
-        "src": "/legacy-import/2ec228faa85f4d53.jpg"
+        "src": "/legacy-import/2ec228faa85f4d53.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/f9c0376a3bcabc3f.png"
+        "src": "/legacy-import/f9c0376a3bcabc3f.png",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/ef7ce7cbe0cf530f.jpg"
+        "src": "/legacy-import/ef7ce7cbe0cf530f.jpg",
+        "sectionIndex": 9
       },
       {
         "alt": "",
-        "src": "/legacy-import/1689dd164b960e94.jpg"
+        "src": "/legacy-import/1689dd164b960e94.jpg",
+        "sectionIndex": 11
       },
       {
         "alt": "",
-        "src": "/legacy-import/8fd927aa6ac0f3f1.jpg"
+        "src": "/legacy-import/8fd927aa6ac0f3f1.jpg",
+        "sectionIndex": 13
       },
       {
         "alt": "",
-        "src": "/legacy-import/5bc31d95a1518d55.jpg"
+        "src": "/legacy-import/5bc31d95a1518d55.jpg",
+        "sectionIndex": 15
       },
       {
         "alt": "",
-        "src": "/legacy-import/232d1eb413767ddc.jpg"
+        "src": "/legacy-import/232d1eb413767ddc.jpg",
+        "sectionIndex": 17
       },
       {
         "alt": "",
-        "src": "/legacy-import/587d966ef3b00d27.jpg"
+        "src": "/legacy-import/587d966ef3b00d27.jpg",
+        "sectionIndex": 19
       },
       {
         "alt": "",
-        "src": "/legacy-import/399f529865239697.jpg"
+        "src": "/legacy-import/399f529865239697.jpg",
+        "sectionIndex": 21
       },
       {
         "alt": "",
-        "src": "/legacy-import/382102d3c52e05c8.jpg"
+        "src": "/legacy-import/382102d3c52e05c8.jpg",
+        "sectionIndex": 23
       },
       {
         "alt": "",
-        "src": "/legacy-import/07c3c9c0218cb7fe.jpg"
+        "src": "/legacy-import/07c3c9c0218cb7fe.jpg",
+        "sectionIndex": 25
       }
     ],
     "path": "/home/drought-watch",
@@ -245,35 +265,43 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/458ec258a3a1a998.png"
+        "src": "/legacy-import/458ec258a3a1a998.png",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/b8c93c66a22e05a0.png"
+        "src": "/legacy-import/b8c93c66a22e05a0.png",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/0be1d4e096e5d831.png"
+        "src": "/legacy-import/0be1d4e096e5d831.png",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/f2a10dbacb1b5c3d.png"
+        "src": "/legacy-import/f2a10dbacb1b5c3d.png",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/c56238b20a283c89.png"
+        "src": "/legacy-import/c56238b20a283c89.png",
+        "sectionIndex": 5
       },
       {
         "alt": "",
-        "src": "/legacy-import/31a1c4e9f9aa3c90.png"
+        "src": "/legacy-import/31a1c4e9f9aa3c90.png",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/880fd2fd6d4b3b12.png"
+        "src": "/legacy-import/880fd2fd6d4b3b12.png",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/88f774c7756aa28e.png"
+        "src": "/legacy-import/88f774c7756aa28e.png",
+        "sectionIndex": 8
       }
     ],
     "path": "/home/public-safety-survey-results",
@@ -327,7 +355,8 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/b15d16cb0b1ff442.png"
+        "src": "/legacy-import/b15d16cb0b1ff442.png",
+        "sectionIndex": 7
       }
     ],
     "path": "/home/truth",
@@ -397,11 +426,13 @@
     "iframes": [
       {
         "src": "https://docs.google.com/forms/d/e/1FAIpQLSc9Vq0RsTXB26Z5EUF2kpIETtUPuhTzYf9jWDv6icePoyOz8g/viewform?embedded=true",
-        "title": ""
+        "title": "",
+        "sectionIndex": 1
       },
       {
         "src": "https://docs.google.com/forms/d/e/1FAIpQLSc0iLU0RKkvpOVgUu8uTh6MaIVQaEr941-WD8jBLOURfCru8Q/viewform?embedded=true",
-        "title": ""
+        "title": "",
+        "sectionIndex": 1
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -445,79 +476,98 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/2c151605c51b8f47.jpg"
+        "src": "/legacy-import/2c151605c51b8f47.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/658d498b1783ad0d.jpg"
+        "src": "/legacy-import/658d498b1783ad0d.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/f8acbd044ab3326e.jpg"
+        "src": "/legacy-import/f8acbd044ab3326e.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/59a628fbd3407e24.jpg"
+        "src": "/legacy-import/59a628fbd3407e24.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/a3deced8cb7de240.jpg"
+        "src": "/legacy-import/a3deced8cb7de240.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/e509c6efba6ebccc.jpg"
+        "src": "/legacy-import/e509c6efba6ebccc.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/1a8eba0103b9498d.jpg"
+        "src": "/legacy-import/1a8eba0103b9498d.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/7bd8e2e44eba4ecd.jpg"
+        "src": "/legacy-import/7bd8e2e44eba4ecd.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/babbfadfebbde6f8.jpg"
+        "src": "/legacy-import/babbfadfebbde6f8.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/acb9fa2454c8a877.png"
+        "src": "/legacy-import/acb9fa2454c8a877.png",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/e4a5c36cf38e8532.jpg"
+        "src": "/legacy-import/e4a5c36cf38e8532.jpg",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/80a3f486a817b7d0.jpg"
+        "src": "/legacy-import/80a3f486a817b7d0.jpg",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/a5ac31c70ac9fbfa.jpg"
+        "src": "/legacy-import/a5ac31c70ac9fbfa.jpg",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/4b6d6275933b176b.jpg"
+        "src": "/legacy-import/4b6d6275933b176b.jpg",
+        "sectionIndex": 9
       },
       {
         "alt": "",
-        "src": "/legacy-import/742a3acec593f068.jpg"
+        "src": "/legacy-import/742a3acec593f068.jpg",
+        "sectionIndex": 9
       },
       {
         "alt": "",
-        "src": "/legacy-import/3d6e891babea3ec9.jpg"
+        "src": "/legacy-import/3d6e891babea3ec9.jpg",
+        "sectionIndex": 9
       },
       {
         "alt": "",
-        "src": "/legacy-import/16dfe28b0c057ebe.jpg"
+        "src": "/legacy-import/16dfe28b0c057ebe.jpg",
+        "sectionIndex": 10
       },
       {
         "alt": "",
-        "src": "/legacy-import/e7bae372f0f64f70.jpg"
+        "src": "/legacy-import/e7bae372f0f64f70.jpg",
+        "sectionIndex": 10
       },
       {
         "alt": "",
-        "src": "/legacy-import/2101e37d5be0a71a.jpg"
+        "src": "/legacy-import/2101e37d5be0a71a.jpg",
+        "sectionIndex": 10
       }
     ],
     "path": "/stories",
@@ -574,15 +624,18 @@
     "iframes": [
       {
         "src": "https://www.youtube.com/embed/uWQsqw7JSkc?embed_config=%7B%22enc%22:%22AXH1ezneuXdjXpVd78smsiyHWbzklW6gttlzbxRCVrQnDbqtHYcPzBalo03avKRPiiMF1RnH-x7GKDoPplHkL82wjF88u29bsIwyB5R39BTeWd8AbIk7PCFWnu5Ls7ZUGZe48vqnuOsxhfQFJmI5u71J_pMsy_irQfsnTc98Y0glKUBcRWxW1Ix49i8kiXhU4YwA6J0npg9odzx5G8jZfWi6in_VyU3pThNZZxuNuLIm34FUZNPBrC8ZVsN-LENB9SBKup7gGYxEeoO2_OF0LA6lIL5X5OI_61Q1ZXQbl4EzqGMopvy0hL1vUy4z-FgekXkBOSbRlHqjBgbwGq54O5Vpkfn84izaQrnX8MTJvyTmv-E%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 2
       },
       {
         "src": "https://www.youtube.com/embed/H7K6DFzqy_A?embed_config=%7B%22enc%22:%22AXH1ezlB4KZFbCbxSlwq1cDEClfKWrF4aa44W8KgMo70X2fHXhh7QcdgX-SRJH0J3DHqwV1zfcRNY7MuwlyJl_NecN9Qps4v7j4fVakLebF0swnU_SvBiPZZ707Toyf4H6vlAaBDh2rorD-etfuKZnSEdsvR_wikn7M7zfWuQkiVxkQkJGjs7RTiPAwtcI_58J2um5PLC6CUL2J3TaMtoYNhAV8bOiWfTMQh6v0kGECuGdWVZMx7Tki0Q9n9wWCoWLtfJJEsKZn_17cv_KK4Z6m0EYrbJeFCME6D-yGqjkcqVScrtyWAq3LL9-pGRjYyM-_FKKk_zC9-ncSIUV_mEoiFinEF_qM2udyUT0VgThUHDfg%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.youtube.com/embed/-Fv1572rMNc?embed_config=%7B%22enc%22:%22AXH1ezmZ3eWkTAhHlqiFsSKFFPMJUFk1s1RKIQczLJ9S5IcbHQbXtgSpZH8ys4dZfHpV8b-7REdcYBr00XeE3s6jttpB-H43SDjUPCs4Cm2-H2tQIhhp1TfchV2Dxtp9tl4RMq7nrpnQ7B2UpKxEnty9x-LhWZIekKau2XVcO_tcLk1-w8KokmzZTvyRSl862ehF4xuJlAcG9Rk_sGeqt9_A5HHeiFf2bfjQBvvaB2_Wyy7cT8P4tjD1J0FZeZ7xCORm8iIiAQh18k-hAsyUYYb6Ka0gu3fqkcm8cOQHy472RBbRWgqzB4UC2s41tZG5ONpEfaCUIjz0u0p1H_KPVvy0HpJAwsM8-r07yHR0GBTaHYI%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 4
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -646,15 +699,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/b7332c5740f21da7.jpg"
+        "src": "/legacy-import/b7332c5740f21da7.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/28997fe370e492b1.jpg"
+        "src": "/legacy-import/28997fe370e492b1.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/e1ea2979c432b526.jpg"
+        "src": "/legacy-import/e1ea2979c432b526.jpg",
+        "sectionIndex": 3
       }
     ],
     "path": "/stories/local-artist-spotlight/upcoming-events",
@@ -691,11 +747,13 @@
     "iframes": [
       {
         "src": "https://www.youtube.com/embed/RO2LeqU4PKA?embed_config=%7B%22enc%22:%22AXH1ezna2HuDWr9BWZmtlWWjjCOs8Tus8JiS7AdbER0foRNjB6jkiCiWiO1p6h8ye3EMSpED2VAagEP77nj5O4Y0uFJIrb7fSh1TPUFm4K8SXR0YfE4aQw8R1HbMCp-grh5hTXPwzbGe0SDjjx5Xz-bMKbiQjSWQfAXa89TeAwwdlJazH74hABEH0yNLMrF04yeUG5QLiluSds6WUtPG9WkHTsFRgvGW-uoXEzVMdizq4m8f7T_bLWsGFuwXuY5JAPgQ8cTfV2bSGcb_0AELt454OsmjnnvD97ARCiOcY6O6CDim8jQ-EOy_MMkaPQqR4HcyMYvgKgAewT_JsM4Ju-zjKnqtOwk7lBGK78o7Xo2Pf7o%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 4
       },
       {
         "src": "https://www.youtube.com/embed/o66WDcBVb2c?color=white&embed_config=%7B%22enc%22:%22AXH1ezls4HNFYs6XxF3gwy3Sg8ZCAbffvwSxvhE7N--2F4yfPtUy0Pk5DH5OvR5-AuJL9dhZZnmeBvEHIgvBToO2ZaCHyJ8Jef2TX2QLIm0MOO_u_q8xrBI140NIgCYRaWqlF0_2M3IjghDiHlbEaTz7dF9Tuawy5vdXTtV-x3fiGRm8K9LyHlRbjP-ICX6Ea_9Kl_7jov0a7mlznaMshqekYgdfe_sqGxbG0AQGFjh9ZlAazfRWXQ744hCtkIWkYlmRFR-qyYoHFNG2KuOycI0ThjReE0hB0yjVhCbFcmmDvME4dWWsQRgvVkVDszQYdWdvzGkpbGKriy-tD15pA9eRH0pe419kN-y04s9sRGj9MlE%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 6
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -726,35 +784,43 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/965f47b0ffc37858.jpg"
+        "src": "/legacy-import/965f47b0ffc37858.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/56cc5adc8a490c0f.jpg"
+        "src": "/legacy-import/56cc5adc8a490c0f.jpg",
+        "sectionIndex": 5
       },
       {
         "alt": "",
-        "src": "/legacy-import/2998fdfa57397ded.jpg"
+        "src": "/legacy-import/2998fdfa57397ded.jpg",
+        "sectionIndex": 8
       },
       {
         "alt": "",
-        "src": "/legacy-import/2d742db19431f96f.jpg"
+        "src": "/legacy-import/2d742db19431f96f.jpg",
+        "sectionIndex": 11
       },
       {
         "alt": "",
-        "src": "/legacy-import/2abd06b7d88d2939.jpg"
+        "src": "/legacy-import/2abd06b7d88d2939.jpg",
+        "sectionIndex": 14
       },
       {
         "alt": "",
-        "src": "/legacy-import/1114398d250c3c55.jpg"
+        "src": "/legacy-import/1114398d250c3c55.jpg",
+        "sectionIndex": 17
       },
       {
         "alt": "",
-        "src": "/legacy-import/2a67a04c3c5fa54b.jpg"
+        "src": "/legacy-import/2a67a04c3c5fa54b.jpg",
+        "sectionIndex": 20
       },
       {
         "alt": "",
-        "src": "/legacy-import/44de22c83157027e.jpg"
+        "src": "/legacy-import/44de22c83157027e.jpg",
+        "sectionIndex": 23
       }
     ],
     "path": "/stories/14-brutal-truths-about-sacramento-ai",
@@ -808,11 +874,13 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/d87fba8decce8ecd.jpg"
+        "src": "/legacy-import/d87fba8decce8ecd.jpg",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/bb29d13c76d12c84.jpg"
+        "src": "/legacy-import/bb29d13c76d12c84.jpg",
+        "sectionIndex": 6
       }
     ],
     "path": "/stories/governors-statement-sheds-light-on-ca",
@@ -879,15 +947,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/462a4e96e87696b1.jpg"
+        "src": "/legacy-import/462a4e96e87696b1.jpg",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/d2f528d36615212b.jpg"
+        "src": "/legacy-import/d2f528d36615212b.jpg",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/d2f40bfb02357a4d.jpg"
+        "src": "/legacy-import/d2f40bfb02357a4d.jpg",
+        "sectionIndex": 11
       }
     ],
     "path": "/stories/will-downtown-be-getting-a-facelift",
@@ -957,15 +1028,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/506c097fa27097b9.jpg"
+        "src": "/legacy-import/506c097fa27097b9.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/a7bc89c703b9cb0d.jpg"
+        "src": "/legacy-import/a7bc89c703b9cb0d.jpg",
+        "sectionIndex": 5
       },
       {
         "alt": "",
-        "src": "/legacy-import/d811c6ae3b6d00df.jpg"
+        "src": "/legacy-import/d811c6ae3b6d00df.jpg",
+        "sectionIndex": 9
       }
     ],
     "path": "/stories/new-anthropological-discovery",
@@ -1023,11 +1097,13 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/a632338a338be0ef.jpg"
+        "src": "/legacy-import/a632338a338be0ef.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/c0901ea465394dec.jpg"
+        "src": "/legacy-import/c0901ea465394dec.jpg",
+        "sectionIndex": 6
       }
     ],
     "path": "/stories/flea-market-infested-with-ticks-discrepancy-confuses-city-hall",
@@ -1093,7 +1169,8 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/aa2aa80b6f383aaa.jpg"
+        "src": "/legacy-import/aa2aa80b6f383aaa.jpg",
+        "sectionIndex": 2
       }
     ],
     "path": "/stories/alligators-appearing-in-the-american-river",
@@ -1123,19 +1200,23 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/7be66aaadb86e79d.jpg"
+        "src": "/legacy-import/7be66aaadb86e79d.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/4080f757c0cafba3.jpg"
+        "src": "/legacy-import/4080f757c0cafba3.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/f2d6ece2de89b77d.jpg"
+        "src": "/legacy-import/f2d6ece2de89b77d.jpg",
+        "sectionIndex": 9
       },
       {
         "alt": "",
-        "src": "/legacy-import/be6f5a6de6705e0d.jpg"
+        "src": "/legacy-import/be6f5a6de6705e0d.jpg",
+        "sectionIndex": 12
       }
     ],
     "path": "/stories/monkeypox-a-monkeys-perspective",
@@ -1217,15 +1298,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/7e0541daf603f53b.jpg"
+        "src": "/legacy-import/7e0541daf603f53b.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/8b423125a69c35c2.jpg"
+        "src": "/legacy-import/8b423125a69c35c2.jpg",
+        "sectionIndex": 5
       },
       {
         "alt": "",
-        "src": "/legacy-import/592e0536fc0ae567.png"
+        "src": "/legacy-import/592e0536fc0ae567.png",
+        "sectionIndex": 8
       }
     ],
     "path": "/stories/the-cost-of-driving",
@@ -1283,15 +1367,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/8a030fb041ebca25.jpg"
+        "src": "/legacy-import/8a030fb041ebca25.jpg",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/099e45307de929e1.jpg"
+        "src": "/legacy-import/099e45307de929e1.jpg",
+        "sectionIndex": 8
       },
       {
         "alt": "",
-        "src": "/legacy-import/44536cbaa7fcba6b.jpg"
+        "src": "/legacy-import/44536cbaa7fcba6b.jpg",
+        "sectionIndex": 11
       }
     ],
     "path": "/stories/hydrogen-found-in-city-water-supply",
@@ -1361,7 +1448,8 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/06d9a0baae778933.jpg"
+        "src": "/legacy-import/06d9a0baae778933.jpg",
+        "sectionIndex": 1
       }
     ],
     "path": "/stories/sac-issues",
@@ -1391,11 +1479,13 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/696052275ce36ee2.jpg"
+        "src": "/legacy-import/696052275ce36ee2.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/7e91288f14a9eed1.jpg"
+        "src": "/legacy-import/7e91288f14a9eed1.jpg",
+        "sectionIndex": 5
       }
     ],
     "path": "/stories/cashmere-king-future-unsure",
@@ -1457,15 +1547,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/52f08513c7165d66.jpg"
+        "src": "/legacy-import/52f08513c7165d66.jpg",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/29d2794d3d0559c2.jpg"
+        "src": "/legacy-import/29d2794d3d0559c2.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/eb560171f922bf5c.jpg"
+        "src": "/legacy-import/eb560171f922bf5c.jpg",
+        "sectionIndex": 4
       }
     ],
     "path": "/stories/tips-of-the-job-trade",
@@ -1549,15 +1642,18 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/014d3702f6d20d2a.jpg"
+        "src": "/legacy-import/014d3702f6d20d2a.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/8b69fcae1c42d88e.jpg"
+        "src": "/legacy-import/8b69fcae1c42d88e.jpg",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/e388cfd5fb141578.jpg"
+        "src": "/legacy-import/e388cfd5fb141578.jpg",
+        "sectionIndex": 5
       }
     ],
     "path": "/stories/directed-energy-and-you",
@@ -1595,11 +1691,13 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/021bb4293632be0b.jpg"
+        "src": "/legacy-import/021bb4293632be0b.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/c2ffd2d9fb6a0709.jpg"
+        "src": "/legacy-import/c2ffd2d9fb6a0709.jpg",
+        "sectionIndex": 5
       }
     ],
     "path": "/stories/gas",
@@ -1665,93 +1763,115 @@
     "iframes": [
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=967577131",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.youtube.com/embed/EDcVcQ9kq38?embed_config=%7B%22enc%22:%22AXH1ezlkHgHoo2wImMYbsqHKl9lsAQmcwoGOvvK7VktU4D4iBVwsXsOryMYlU3d4FRiK7L4G9sp5Uzp5uy5u2frS2yguEqgbdazS9lPnNggStIyqF2jG4u3tYmA3vwdHz0Ihy5eWyo3zeosdJiKZKO3RqWhQ7qSTbJgDzR9OrMBwM723clkPmX2nw4piNS6n4KR8GjMIyrqkAC9djE0Lx-IbL0u8fJ1uCV0O8tgjwbzZ-Ati7QiL4-Le-z9PA2CDKvrCIsU_SCYdu7CmGW8WBKRrhYt8CRAfRE5OK_5672MhqBR0FQt0JgRxPF_kk7KYH5PA7P86HHwp9m_g9v6kvuTFfp-fll7wk3qsxDVX4C2wyhU%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=280102024",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.youtube.com/embed/5Lmwg7VwtFc?embed_config=%7B%22enc%22:%22AXH1ezmLkNCXCgfQvZ7hEpZKW4O_0LE7emyPHRUTzb3heYTMZpohkEpPs4bnhTJl5YGCBm0YXXtuOtTbA5o1VZZEIsPSk5sG2EK_2vGV_wY3FjOXr2kAzTAw7sGhXXwDCuaRLIhTWqQeBY9oYYeLCqjM_gX48zvH_hBOnMSX-xAIY2j3-pcmkKIXKhqohkdAAhvx9g6fhBCKL4_8mnnB10TZG5fEZUgWD-zUPJztHEocqhZ8qAK4vxh9evtnBUqPNBQejk6uNcyaCkbt1k_8WM0Xxz9DZKEMuHWrtYarG-lWOcMfpTSqYeR3yxei55Z6sRnsctIhSCYL_TpcyrRU8Qq4KdtoPYdRXz0na4VfHfiZ-g0%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=543825365",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 6
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=333029691",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 6
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=557635335",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 6
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=819425414",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 10
       },
       {
         "src": "https://www.youtube.com/embed/S1b1EZVgRd8?embed_config=%7B%22enc%22:%22AXH1eznLIAZ4avEqD_qIXJUihTtocKZJKx4go_9ljJt7eaA_emmRETRj9ZtIDchY2oCzPcYBkTBpyKCxBpWOZ6KYEly-FHIaPcCZ8Q9211RLUwvC-WgRBJBUpSvgHr_eYMnhSPEzpt_fz49aNezQ_tyqTXc9pGlCo1pNlIOZskkTw7YQlhC8mgus9tvbRRR9UXdJkrjqx-JDLUA7YF_sSayaQMZNiR9eD1yaNQt0C0X_NIIcYNmBF_RObRAUP1qvJDZO7R1Ed6GTo40Objot4LSPnhBpwFy-Kqu7-8aUPvbWSehJ4BYC-K_sidPoFXFo9YjrPfWA9S6jQWAS4vC_HNlPtjJz7hYQuwNZNRq7t2Wiw0Q%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 10
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=521532417",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 10
       }
     ],
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/20763d3e18be681c.jpg"
+        "src": "/legacy-import/20763d3e18be681c.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/5aa0b5835489b205.png"
+        "src": "/legacy-import/5aa0b5835489b205.png",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/8175189370219f67.jpg"
+        "src": "/legacy-import/8175189370219f67.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/d70f4d89fe5f2524.jpg"
+        "src": "/legacy-import/d70f4d89fe5f2524.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/c05c0a4232a08b78.jpg"
+        "src": "/legacy-import/c05c0a4232a08b78.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/4c33d38c5612ed7c.jpg"
+        "src": "/legacy-import/4c33d38c5612ed7c.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/b1c2e011881cf691.jpg"
+        "src": "/legacy-import/b1c2e011881cf691.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/1bdb60169c808bad.jpg"
+        "src": "/legacy-import/1bdb60169c808bad.jpg",
+        "sectionIndex": 6
       },
       {
         "alt": "",
-        "src": "/legacy-import/755d6e1e149a406f.jpg"
+        "src": "/legacy-import/755d6e1e149a406f.jpg",
+        "sectionIndex": 10
       },
       {
         "alt": "",
-        "src": "/legacy-import/759b1be7bcf4b3d8.jpg"
+        "src": "/legacy-import/759b1be7bcf4b3d8.jpg",
+        "sectionIndex": 10
       },
       {
         "alt": "",
-        "src": "/legacy-import/9c9b43f785367a65.jpg"
+        "src": "/legacy-import/9c9b43f785367a65.jpg",
+        "sectionIndex": 10
       },
       {
         "alt": "",
-        "src": "/legacy-import/1763b7816e6a4108.jpg"
+        "src": "/legacy-import/1763b7816e6a4108.jpg",
+        "sectionIndex": 10
       }
     ],
     "path": "/shows",
@@ -1806,11 +1926,13 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/47a4e495349c895a.jpg"
+        "src": "/legacy-import/47a4e495349c895a.jpg",
+        "sectionIndex": 2
       },
       {
         "alt": "",
-        "src": "/legacy-import/8702eddee95e05ed.jpg"
+        "src": "/legacy-import/8702eddee95e05ed.jpg",
+        "sectionIndex": 3
       }
     ],
     "path": "/hot-street",
@@ -1843,23 +1965,28 @@
     "iframes": [
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=654875840",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 1
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=691486532",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=809539056",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=665377745",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=23966201",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -1900,15 +2027,18 @@
     "iframes": [
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=62297962",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 1
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=493627515",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 3
       },
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.9vdPKhB0RUg.O%2Fd%3D1%2Frs%3DAHpOoo97anj7zZ432JcN58tqJJp_A6WeOw%2Fm%3D__features__&r=114469766",
-        "title": "Custom embed"
+        "title": "Custom embed",
+        "sectionIndex": 7
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -1951,7 +2081,8 @@
     "iframes": [
       {
         "src": "https://www.gstatic.com/atari/embeds/8306a3600875750e6acc147fd93569bf/intermediate-frame-minified.html",
-        "title": ""
+        "title": "",
+        "sectionIndex": 2
       }
     ],
     "images": [],
@@ -2026,11 +2157,13 @@
     "iframes": [
       {
         "src": "https://www.youtube.com/embed/Ixmw_WhDoxw?embed_config=%7B%22enc%22:%22AXH1ezl-WPUHdv4b3xPe8q4clzRx_HDm5y48rLBtU2ad-iCWfNshMEew3FzodwkG5ypg7Q_Dx8t7OGH_moI05F3mIj-R-1MiPopj_NtAgoGhvtZlBkoiueBE6MiKVm2vGEsLwp4ZD2f_acxhIuhVLvmKw5xkQU8RaoNhXXTKTxIo3TXwCEi1GFzcEYDNja8pk6fZOwBJah2UTHrvoExsoQtlKPEiOziyggM_DhWHZBFi27gzVkTaZ2M_ud4gtddec43yOZAXglpbsNEHXKts20J4FAmosoCq_ezaiI9moymP7xtGYnsMiyNk7PQBQI860noBx-KxipSQf1Wx_lpYYtttswPtEQmTpt1g-mp7H0hgpNc%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 19
       },
       {
         "src": "https://www.youtube.com/embed/4Y8ENieYdDg?embed_config=%7B%22enc%22:%22AXH1ezkkJz1xrkG2FdupZPxFfYV_aKQwAW5hpTVdLFdvd5i-IHHoMzIDxe6MGrGg4qCNrOV_JsSFuATuIQwSkmEnwdAAz95xWbtTw6vJwD9WcdEY319pJFkvenGIHdXK4OAtIFWRq9jE9lQXYiy_A6WohysV3dIFtV7z3-7YVE49rPRF01gxqLlDx4R-ynU16PfSuzl9YNO-NXUYgnh0RzoGegLg2w9xW_i-eB71kVwA13vQmzc71j2hHCt3Q5JFbQDo-jnGcPmO_40N-SBWS_GVXzozrz3v8xs-8ftOFXMsv1Sy2nKR7y2ciqutMQpvXR1hnAB80IpfPWcLeaSx68kmvXs5WcSdU1EkMIm9htQL8kk%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 19
       },
       {
         "src": "https://drive.google.com/auth_warmup",
@@ -2040,27 +2173,33 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/7ccc13707f676c73.png"
+        "src": "/legacy-import/7ccc13707f676c73.png",
+        "sectionIndex": 1
       },
       {
         "alt": "",
-        "src": "/legacy-import/21c090a987d5ab63.png"
+        "src": "/legacy-import/21c090a987d5ab63.png",
+        "sectionIndex": 4
       },
       {
         "alt": "",
-        "src": "/legacy-import/d98ab18c265fa617.png"
+        "src": "/legacy-import/d98ab18c265fa617.png",
+        "sectionIndex": 7
       },
       {
         "alt": "",
-        "src": "/legacy-import/f4e7b8e3ab4200c5.jpg"
+        "src": "/legacy-import/f4e7b8e3ab4200c5.jpg",
+        "sectionIndex": 10
       },
       {
         "alt": "",
-        "src": "/legacy-import/bd66c0dfaea95c12.png"
+        "src": "/legacy-import/bd66c0dfaea95c12.png",
+        "sectionIndex": 13
       },
       {
         "alt": "",
-        "src": "/legacy-import/0b863d4155306694.jpg"
+        "src": "/legacy-import/0b863d4155306694.jpg",
+        "sectionIndex": 16
       }
     ],
     "path": "/about/the-team",
@@ -2138,23 +2277,28 @@
     "images": [
       {
         "alt": "",
-        "src": "/legacy-import/ba2d631bdcc1818e.jpg"
+        "src": "/legacy-import/ba2d631bdcc1818e.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/98f84f3d0411777b.jpg"
+        "src": "/legacy-import/98f84f3d0411777b.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/4c2fb224ab79ac55.jpg"
+        "src": "/legacy-import/4c2fb224ab79ac55.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/36713e6f2cb07cbf.jpg"
+        "src": "/legacy-import/36713e6f2cb07cbf.jpg",
+        "sectionIndex": 3
       },
       {
         "alt": "",
-        "src": "/legacy-import/179be0d410174e8d.jpg"
+        "src": "/legacy-import/179be0d410174e8d.jpg",
+        "sectionIndex": 3
       }
     ],
     "path": "/about/headquarters",
@@ -2184,19 +2328,23 @@
     "iframes": [
       {
         "src": "https://maps-api-ssl.google.com/maps?hl=en-US&ll=38.571375,-121.436415&output=embed&z=11",
-        "title": ""
+        "title": "",
+        "sectionIndex": 1
       },
       {
         "src": "https://www.youtube.com/embed/YWs61iTW0PY?embed_config=%7B%22enc%22:%22AXH1ezkNSrUOyRFUnBiAj6xdNrpTOo4WVkz5b3-_7QgAmyVmEDhWTUGm9tJX6Gg0pgwKygfqCNpoj0r0wi4oQiG3cGGhPkQxVl8KIkU7QVz9hCeQHwNnYgRfoybQPDa0-q0kOJY8Nz8zKfRAwhR0jk43QHR7hyLLNTGo1FBXe_xptAEvzDEt-r0fHPkHKabRM4keTf5-SRn6dHcYV4ToW1Ap2epP-FR6WeG57qjJPUOmaoKTSAMKLW3OUR-IVJwXBmOKgoJKn4-UQlBDxcBULoCOfa8QHpAyoZKoWwwHGUERWoUiTE0nGxcx3mTg9mQLcNh4vyML2kmQ0RLqafkmuWI4skE8lzSkDUoz1lqco0Euro8%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 4
       },
       {
         "src": "https://www.youtube.com/embed/3sa5lr7Rmdw?embed_config=%7B%22enc%22:%22AXH1eznoGDO2QAZ5lazb2kq1H_6Di6j-bEKTI2uEg0m5wOKpCmJKxz-gwO9B1B4La4vYLpMU78S6YFa3SNdA5TwQ0ENFdXtCzqb8NaX39g2xwoK7NcgzCf4d5VJRwLvtxRlw4EVnJv2oO9tHjQjW3BoEiYiNcve2GMZ06yFJQpVLC8FGLBjFIKCrYhgDwXFbpuC6BNDNXaoOivzB6xVAJRwntckZC9ONLLZiV_G5_FVb5_D_cTov5BPVGGB-gxWbRLfMalKIvb-lKwqLRoF2urgfRPt4c9CE0_shGAlhBfpz5Tv4o1ouZPvN3s4cJJBRjKC9_d7gtqjxMrmi9nB5XSFyc7rsXvqFqYxnAqTPi88Ztj0%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 5
       },
       {
         "src": "https://www.youtube.com/embed/kU2LfAaYHTI?embed_config=%7B%22enc%22:%22AXH1eznnmN4sW6vjmTd8fPzFipVSwcakt_JS8Vf_pI6I7x9GKZWNZOjHC8xgzeNmNrZyJNgJMxSaV6raGiaHjpfXn1O9dhJheD4bnWITbR8UVenUgyVLzXrYLnhSCjqXNPQxCK350y9Duh55hgwkWMEN7Ae94mmhO_6vRrhZrZCq8bWKL9juYKUKrODKSB-19f5AW1VUTz9_GV_x--7aXjl_xjcRtAu9tzXu960tfXqMwrYHIikdQC83sbPQ2-7atafkpsNPMEqasUxfaBQI8imRQc_wlav7AYCdrGQ7NkdYKJ2g6g7XmoqOua_4kl8lvnqRSEgt4ZJrDhErv7u_iTVR2y1OPPkntlL0zoqB6cX4MTM%3D%22%7D&enablejsapi=1&errorlinks=1&origin=https://sites.google.com&vl=1",
-        "title": ""
+        "title": "",
+        "sectionIndex": 6
       },
       {
         "src": "https://drive.google.com/auth_warmup",

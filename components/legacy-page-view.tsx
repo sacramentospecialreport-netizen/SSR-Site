@@ -1,9 +1,8 @@
 import Link from "next/link";
 import {
-  getLegacyEmbeds,
+  getLegacyFlowSections,
   getLegacySection,
   getLegacySummary,
-  getLegacyTextSections,
   getLegacyTitle,
   getRelatedLegacyPages,
   type LegacyContentPage,
@@ -14,12 +13,8 @@ const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export function LegacyPageView({ page }: { page: LegacyContentPage }) {
   const title = getLegacyTitle(page);
   const section = getLegacySection(page);
-  const textSections = getLegacyTextSections(page);
-  const embeds = getLegacyEmbeds(page);
+  const flowSections = getLegacyFlowSections(page);
   const related = getRelatedLegacyPages(page);
-  const images = page.images.filter((image) => image.src);
-  const leadImage = images[0];
-  const gallery = images.slice(1);
 
   return (
     <>
@@ -39,25 +34,47 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
           <span>Original report</span>
         </div>
 
-        {leadImage && (
-          <figure className="legacy-hero-image">
-            <img src={leadImage.src} alt={leadImage.alt || title} />
-            <figcaption>From the Sacramento Special Report newsroom archive</figcaption>
-          </figure>
-        )}
-
         <div className="legacy-report-grid">
           <article className="legacy-report-copy">
-            {textSections.map((blocks, sectionIndex) => (
-              <section key={`${page.path}-${sectionIndex}`}>
-                {blocks.map((block, blockIndex) => {
+            {flowSections.map((flow, flowIndex) => (
+              <section className="legacy-flow-section" key={`${page.path}-${flow.index}`}>
+                {flow.images.length > 0 && (
+                  <div className={`legacy-inline-images${flow.images.length > 1 ? " legacy-inline-images-grid" : ""}`}>
+                    {flow.images.map((image, imageIndex) => (
+                      <figure key={`${image.src}-${imageIndex}`}>
+                        <img
+                          src={image.src}
+                          alt={image.alt || `${title} archival image ${imageIndex + 1}`}
+                          loading={flowIndex === 0 && imageIndex === 0 ? "eager" : "lazy"}
+                        />
+                      </figure>
+                    ))}
+                  </div>
+                )}
+                {flow.blocks.map((block, blockIndex) => {
                   const isSubhead =
                     blockIndex === 0 &&
-                    sectionIndex > 0 &&
+                    flowIndex > 0 &&
                     block.length < 100 &&
                     !/[.!?]$/.test(block);
                   return isSubhead ? <h2 key={block}>{block}</h2> : <p key={`${block}-${blockIndex}`}>{block}</p>;
                 })}
+                {flow.embeds.length > 0 && (
+                  <div className="legacy-inline-embeds">
+                    {flow.embeds.map((embed, embedIndex) => (
+                      <figure className={`legacy-embed legacy-embed-${embed.kind}`} key={`${embed.src}-${embedIndex}`}>
+                        <iframe
+                          src={embed.src}
+                          title={embed.title}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                        {embed.title && <figcaption>{embed.title}</figcaption>}
+                      </figure>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
           </article>
@@ -66,39 +83,6 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
             <p>This report has been preserved in full from Sacramento Special Report&apos;s original newsroom.</p>
           </aside>
         </div>
-
-        {embeds.length > 0 && (
-          <section className="legacy-media-section">
-            <div className="section-heading">
-              <h2>Watch & Explore</h2>
-              <span>Original embedded coverage</span>
-            </div>
-            <div className="legacy-embed-grid">
-              {embeds.map((embed, index) => (
-                <figure className={`legacy-embed legacy-embed-${embed.kind}`} key={`${embed.src}-${index}`}>
-                  <iframe
-                    src={embed.src}
-                    title={embed.title}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                  <figcaption>{embed.title}</figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {gallery.length > 0 && (
-          <section className="legacy-gallery">
-            {gallery.map((image, index) => (
-              <figure key={`${image.src}-${index}`}>
-                <img src={image.src} alt={image.alt || `${title} archival image ${index + 2}`} loading="lazy" />
-              </figure>
-            ))}
-          </section>
-        )}
 
         {related.length > 0 && (
           <section className="legacy-related">

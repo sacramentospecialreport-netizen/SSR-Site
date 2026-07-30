@@ -8,6 +8,14 @@ export type LegacyEmbed = {
 };
 
 export type LegacyContentPage = (typeof importedPages)[number];
+export type LegacyImage = LegacyContentPage["images"][number];
+
+export type LegacyFlowSection = {
+  index: number;
+  blocks: string[];
+  images: LegacyImage[];
+  embeds: LegacyEmbed[];
+};
 
 const titleByPath = new Map<string, string>(legacyPages.map(([title, path]) => [path, title]));
 
@@ -45,30 +53,74 @@ export function getLegacyTextSections(page: LegacyContentPage) {
     .filter((blocks) => blocks.length);
 }
 
+function normalizeLegacyEmbed(
+  frame: LegacyContentPage["iframes"][number],
+  index: number,
+): LegacyEmbed {
+  const youtube = frame.src.match(/youtube\.com\/embed\/([^?&/]+)/);
+  if (youtube) {
+    return {
+      src: `https://www.youtube-nocookie.com/embed/${youtube[1]}`,
+      title: frame.title || `SSR video ${index + 1}`,
+      kind: "video",
+    };
+  }
+  if (frame.src.includes("docs.google.com/forms")) {
+    return { src: frame.src, title: frame.title || "SSR community form", kind: "form" };
+  }
+  if (frame.src.includes("maps")) {
+    return { src: frame.src, title: frame.title || "SSR field map", kind: "map" };
+  }
+  return {
+    src: frame.src,
+    title: frame.title || `SSR interactive ${index + 1}`,
+    kind: "interactive",
+  };
+}
+
 export function getLegacyEmbeds(page: LegacyContentPage): LegacyEmbed[] {
   return page.iframes
     .filter((frame) => frame.src && !frame.src.includes("drive.google.com/auth_warmup"))
-    .map((frame, index) => {
-      const youtube = frame.src.match(/youtube\.com\/embed\/([^?&/]+)/);
-      if (youtube) {
-        return {
-          src: `https://www.youtube-nocookie.com/embed/${youtube[1]}`,
-          title: frame.title || `SSR video ${index + 1}`,
-          kind: "video" as const,
-        };
-      }
-      if (frame.src.includes("docs.google.com/forms")) {
-        return { src: frame.src, title: frame.title || "SSR community form", kind: "form" as const };
-      }
-      if (frame.src.includes("maps")) {
-        return { src: frame.src, title: frame.title || "SSR field map", kind: "map" as const };
-      }
-      return {
-        src: frame.src,
-        title: frame.title || `SSR interactive ${index + 1}`,
-        kind: "interactive" as const,
-      };
-    });
+    .map(normalizeLegacyEmbed);
+}
+
+export function getLegacyFlowSections(page: LegacyContentPage): LegacyFlowSection[] {
+  const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const title = normalize(getLegacyTitle(page));
+  const textSections = page.sections.filter(
+    (section) =>
+      section.text.trim() &&
+      !section.text.includes("SACRAMENTO SPECIAL REPORT, SUBSIDIARY"),
+  );
+  const firstTextIndex = textSections[0]?.index;
+  const frames = page.iframes.filter(
+    (frame) => frame.src && !frame.src.includes("drive.google.com/auth_warmup"),
+  );
+  const indices = new Set<number>([
+    ...textSections.map((section) => section.index),
+    ...page.images.map((image) => image.sectionIndex),
+    ...frames
+      .map((frame) => frame.sectionIndex)
+      .filter((index): index is number => typeof index === "number"),
+  ]);
+
+  return [...indices].sort((a, b) => a - b).map((index) => {
+    const text = textSections.find((section) => section.index === index)?.text.trim() ?? "";
+    const blocks = text.split(/\n\s*\n/g).map((block) => block.trim()).filter(Boolean);
+    if (index === firstTextIndex && blocks[0] && normalize(blocks[0]) === title) blocks.shift();
+    return {
+      index,
+      blocks,
+      images: page.images.filter((image) => image.sectionIndex === index),
+      embeds: frames
+        .map((frame, frameIndex) => ({
+          frame,
+          embed: normalizeLegacyEmbed(frame, frameIndex),
+        }))
+        .filter(({ frame }) => frame.sectionIndex === index)
+        .map(({ embed }) => embed),
+    };
+  });
 }
 
 export function getRelatedLegacyPages(page: LegacyContentPage) {
