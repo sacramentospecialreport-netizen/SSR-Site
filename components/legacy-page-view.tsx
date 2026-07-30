@@ -63,13 +63,21 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
                   <div className="legacy-inline-embeds">
                     {flow.embeds.map((embed, embedIndex) => (
                       <figure className={`legacy-embed legacy-embed-${embed.kind}`} key={`${embed.src}-${embedIndex}`}>
-                        <iframe
-                          src={embed.src}
-                          title={embed.title}
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        />
+                        {embed.kind === "unavailable" ? (
+                          <div className="legacy-embed-notice">
+                            <span>SSR Video Archive</span>
+                            <strong>{embed.title}</strong>
+                            <p>The original video is currently private on YouTube.</p>
+                          </div>
+                        ) : (
+                          <iframe
+                            src={embed.src}
+                            title={embed.title}
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
+                        )}
                         {embed.title && <figcaption>{embed.title}</figcaption>}
                       </figure>
                     ))}

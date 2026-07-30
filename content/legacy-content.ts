@@ -4,7 +4,7 @@ import { legacyPages } from "./legacy-pages";
 export type LegacyEmbed = {
   src: string;
   title: string;
-  kind: "video" | "form" | "map" | "interactive";
+  kind: "video" | "audio" | "form" | "map" | "interactive" | "unavailable";
 };
 
 export type LegacyContentPage = (typeof importedPages)[number];
@@ -18,6 +18,45 @@ export type LegacyFlowSection = {
 };
 
 const titleByPath = new Map<string, string>(legacyPages.map(([title, path]) => [path, title]));
+
+const customShowEmbeds: Record<string, { src: string; title: string }> = {
+  "967577131": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=1735656493/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "An Outside Look: Traffic Report",
+  },
+  "280102024": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=2099501062/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "An Inside Look: Deep Dive into Bohemian Grove",
+  },
+  "543825365": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=1217666187/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "21 Reasons to Flee Cambodia",
+  },
+  "333029691": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=1415373124/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "Behind the Scenes",
+  },
+  "557635335": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=390272254/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "Cambodia, Revisited",
+  },
+  "819425414": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=1668595456/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "To Honor the Flights",
+  },
+  "521532417": {
+    src: "https://bandcamp.com/EmbeddedPlayer/track=1579740569/size=small/bgcol=ffffff/linkcol=8d1d21/transparent=true/",
+    title: "No More",
+  },
+};
+
+const showVideoTitles: Record<string, string> = {
+  EDcVcQ9kq38: "On the Streets: Artist Spotlight — Tony Harris",
+  "5Lmwg7VwtFc": "In the Field: Sacramento Storm Coverage",
+  S1b1EZVgRd8: "Where's the Money? Is Minimum Wage Too High?",
+};
+
+const unavailableShowVideos = new Set(["EDcVcQ9kq38", "5Lmwg7VwtFc"]);
 
 export const legacyContentPages = importedPages as LegacyContentPage[];
 
@@ -57,11 +96,21 @@ function normalizeLegacyEmbed(
   frame: LegacyContentPage["iframes"][number],
   index: number,
 ): LegacyEmbed {
+  if (frame.src.includes("gstatic.com/atari/embeds")) {
+    const key = new URL(frame.src).searchParams.get("r") ?? "";
+    const showEmbed = customShowEmbeds[key];
+    if (showEmbed) return { ...showEmbed, kind: "audio" };
+  }
   const youtube = frame.src.match(/youtube\.com\/embed\/([^?&/]+)/);
   if (youtube) {
+    const videoId = youtube[1];
+    const title = showVideoTitles[videoId] || frame.title || `SSR video ${index + 1}`;
+    if (unavailableShowVideos.has(videoId)) {
+      return { src: "", title, kind: "unavailable" };
+    }
     return {
-      src: `https://www.youtube-nocookie.com/embed/${youtube[1]}`,
-      title: frame.title || `SSR video ${index + 1}`,
+      src: `https://www.youtube-nocookie.com/embed/${videoId}`,
+      title,
       kind: "video",
     };
   }
