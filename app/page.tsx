@@ -39,11 +39,11 @@ export default function Home() {
             <summary aria-label="Open sections menu"><span /><span /><span /></summary>
             <nav aria-label="Mobile navigation">
               <Link href="/">Home</Link>
-              <Link href="/archive">Latest</Link>
-              <Link href="/archive#drought">Drought Watch</Link>
-              <Link href="/archive#safety">Public Safety</Link>
-              <Link href="/archive#culture">Arts & Culture</Link>
-              <Link href="/archive#about">About</Link>
+              <Link href="/stories">Latest</Link>
+              <Link href="/home/drought-watch">Drought Watch</Link>
+              <Link href="/home/public-safety-survey-results">Public Safety</Link>
+              <Link href="/stories/convention-watch">Arts & Culture</Link>
+              <Link href="/about">About</Link>
             </nav>
           </details>
           <div className="masthead-date">
@@ -55,17 +55,17 @@ export default function Home() {
             <span>Sacramento<b>Special Report</b></span>
           </Link>
           <div className="header-actions">
-            <Link className="live-button" href="/archive#live"><span />Live</Link>
-            <Link className="archive-button" href="/archive">Archive</Link>
+            <Link className="live-button" href="/live"><span />Live</Link>
+            <Link className="archive-button" href="/stories">Stories</Link>
           </div>
         </div>
         <nav className="section-nav page-shell" aria-label="Sections">
-          <Link href="/">Home</Link><Link href="/archive">Latest</Link>
-          <Link href="/archive#drought">Drought Watch</Link>
-          <Link href="/archive#safety">Public Safety</Link>
-          <Link href="/archive#hot-street">Hot Street</Link>
-          <Link href="/archive#culture">Arts & Culture</Link>
-          <Link href="/archive#shows">Shows</Link><Link href="/archive#about">About</Link>
+          <Link href="/">Home</Link><Link href="/stories">Latest</Link>
+          <Link href="/home/drought-watch">Drought Watch</Link>
+          <Link href="/home/public-safety-survey-results">Public Safety</Link>
+          <Link href="/hot-street">Hot Street</Link>
+          <Link href="/stories/convention-watch">Arts & Culture</Link>
+          <Link href="/shows">Shows</Link><Link href="/about">About</Link>
         </nav>
       </header>
 
@@ -73,7 +73,7 @@ export default function Home() {
         <section className="breaking-strip" aria-label="Developing coverage">
           <span>Developing</span>
           <p>Sacramento heat watch remains in effect as officials monitor river conditions.</p>
-          <Link href="/archive#drought">Follow updates →</Link>
+          <Link href="/home/drought-watch">Follow updates →</Link>
         </section>
 
         <section className="lead-grid" aria-label="Top stories">
@@ -111,22 +111,22 @@ export default function Home() {
               <span>01</span>
               <div>
                 <p className="kicker">Exclusive</p>
-                <h3><Link href="/story/guru-of-news">Inside the underground office of the Guru of News</Link></h3>
+                <h3><Link href="/stories/the-guru-of-news-interview">Inside the underground office of the Guru of News</Link></h3>
               </div>
             </article>
           </aside>
         </section>
 
         <section className="quick-links" aria-label="Special coverage">
-          <Link href="/archive#drought"><span>Special Report</span><strong>Drought Watch</strong><small>Tracking California&apos;s water crisis →</small></Link>
-          <Link href="/archive#safety"><span>Interactive</span><strong>Public Safety Survey</strong><small>See what Sacramento told us →</small></Link>
-          <Link href="/archive#hot-street"><span>Markets</span><strong>Hot Street</strong><small>Finance, crypto and crime →</small></Link>
+          <Link href="/home/drought-watch"><span>Special Report</span><strong>Drought Watch</strong><small>Tracking California&apos;s water crisis →</small></Link>
+          <Link href="/home/public-safety-survey-results"><span>Interactive</span><strong>Public Safety Survey</strong><small>See what Sacramento told us →</small></Link>
+          <Link href="/hot-street"><span>Markets</span><strong>Hot Street</strong><small>Finance, crypto and crime →</small></Link>
         </section>
 
         <section className="latest-section">
           <div className="section-heading">
             <h2>Latest From the Streets</h2>
-            <Link href="/archive">View the complete archive →</Link>
+            <Link href="/stories">View all stories →</Link>
           </div>
           <div className="latest-grid">
             {latestStories.map((story, index) => (
@@ -145,18 +145,21 @@ export default function Home() {
 
         <section className="newsletter">
           <div><p className="kicker">The Morning Special</p><h2>Sacramento, explained before your first cup of coffee.</h2></div>
-          <div><p>A concise briefing of the stories, people and peculiarities shaping the capital.</p><Link href="/archive">Browse today&apos;s edition</Link></div>
+          <div><p>A concise briefing of the stories, people and peculiarities shaping the capital.</p><Link href="/stories">Browse today&apos;s edition</Link></div>
         </section>
       </main>
 
       <footer className="site-footer">
         <div className="page-shell footer-grid">
           <div className="footer-brand"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><p>Sacramento Special Report</p><span>You heard it here first.</span></div>
-          <div><h2>Sections</h2><Link href="/archive#drought">Drought Watch</Link><Link href="/archive#safety">Public Safety</Link><Link href="/archive#culture">Arts & Culture</Link><Link href="/archive#hot-street">Hot Street</Link></div>
-          <div><h2>Company</h2><Link href="/archive#about">About SSR</Link><Link href="/archive#about">The Team</Link><Link href="/archive#about">Headquarters</Link><a href="mailto:press@sacramentospecialreport.org">Contact</a></div>
+          <div><h2>Sections</h2><Link href="/home/drought-watch">Drought Watch</Link><Link href="/home/public-safety-survey-results">Public Safety</Link><Link href="/stories/convention-watch">Arts & Culture</Link><Link href="/hot-street">Hot Street</Link></div>
+          <div><h2>Company</h2><Link href="/about">About SSR</Link><Link href="/about/the-team">The Team</Link><Link href="/about/headquarters">Headquarters</Link><a href="mailto:press@sacramentospecialreport.org">Contact</a></div>
           <div className="footer-contact"><h2>Newsroom</h2><p>1307 N Street, Suite 231</p><p>Sacramento, CA 95814</p><p>916-259-3843</p></div>
         </div>
-        <div className="page-shell copyright"><span>© 2026 Sacramento Special Report</span><span>An Olio Media Holdings publication</span></div>
+        <div className="page-shell copyright">
+          <span>© 2026 Sacramento Special Report <Link className="archive-easter-egg" href="/archive" aria-label="Newsroom index">·</Link></span>
+          <span>An Olio Media Holdings publication</span>
+        </div>
       </footer>
     </>
   );

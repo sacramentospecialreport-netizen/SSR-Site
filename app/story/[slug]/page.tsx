@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LegacyPageView } from "@/components/legacy-page-view";
+import { getLegacyPage } from "@/content/legacy-content";
 import { allStories } from "@/content/legacy-pages";
 
-const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const legacyStoryPaths: Record<string, string> = {
+  "hawk-tuah-patio": "/stories/14-brutal-truths-about-sacramento-ai",
+  "fish-populations-rebound": "/stories/governors-statement-sheds-light-on-ca",
+  "sacramento-volunteers": "/stories/will-downtown-be-getting-a-facelift",
+  "public-safety-results": "/home/public-safety-survey-results",
+  "guru-of-news": "/stories/the-guru-of-news-interview",
+  "drought-watch": "/home/drought-watch",
+};
 
 export const dynamicParams = false;
 
@@ -20,32 +29,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   const { slug } = await params;
   const story = allStories.find((item) => item.slug === slug);
   if (!story) return <main className="article-page"><Link href="/">← Front page</Link><h1>Story not found</h1></main>;
-
-  const body = story.body ?? [
-    story.summary,
-    "This story has been recovered from the Sacramento Special Report archive and is being prepared for publication in the new edition.",
-    "The complete original reporting, media and attribution will appear here as the migration continues.",
-  ];
-
-  return (
-    <>
-      <header className="article-masthead">
-        <Link href="/"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><span>Sacramento Special Report</span></Link>
-      </header>
-      <main className="article-page">
-        <Link className="article-back" href="/">← Back to the front page</Link>
-        <p className="kicker">{story.section}</p>
-        <h1>{story.title}</h1>
-        <p className="article-dek">{story.summary}</p>
-        <div className="article-byline"><strong>By {story.byline}</strong><span>{story.minutes} min read</span></div>
-        <div className="article-rule" />
-        <article>{body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</article>
-        <aside className="migration-note">
-          <strong>From the archive</strong>
-          <p>This page is part of SSR&apos;s active migration from Google Sites. Layout and core story information are live; the full historical article is next in the editorial restoration queue.</p>
-          <Link href="/archive">Explore the complete archive →</Link>
-        </aside>
-      </main>
-    </>
-  );
+  const legacyPage = getLegacyPage(legacyStoryPaths[slug]);
+  if (!legacyPage) return <main className="article-page"><Link href="/">← Front page</Link><h1>Story unavailable</h1></main>;
+  return <LegacyPageView page={legacyPage} />;
 }

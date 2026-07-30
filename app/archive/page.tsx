@@ -6,7 +6,7 @@ const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   title: "Archive",
-  description: "The complete Sacramento Special Report legacy site inventory.",
+  description: "A private newsroom index of SSR's original reports.",
 };
 
 const categoryNames: Record<string, string> = {
@@ -25,7 +25,7 @@ export default function ArchivePage() {
         <img src={`${assetBase}/legacy/ssr-logo.png`} alt="" />
         <p>Sacramento Special Report</p>
         <h1>The SSR Archive</h1>
-        <span>Every page from the original Sacramento Special Report website, catalogued for migration.</span>
+        <span>Private newsroom index · original SSR reports</span>
       </header>
       <div className="archive-list">
         {categories.map((category) => (
@@ -35,7 +35,7 @@ export default function ArchivePage() {
               {legacyPages.filter((page) => page[2] === category).map(([title, path]) => (
                 <li key={path}>
                   <div><h3>{title}</h3><p>{path}</p></div>
-                  <a href={`https://sites.google.com/view/ssr-news${path}`} target="_blank" rel="noreferrer">View original ↗</a>
+                  <Link href={path === "/home" ? "/" : path}>Open report →</Link>
                 </li>
               ))}
             </ol>
