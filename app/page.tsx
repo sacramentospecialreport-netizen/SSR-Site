@@ -44,6 +44,7 @@ const bulletinLinks = [
   ["Headquarters", "/about/headquarters"],
   ["Intimate Chat", "/home/user-feedback"],
   ["Live field reports", "/live"],
+  ["Artifact registry", "/artifact-files"],
 ] as const;
 
 function StoryMeta({ byline, minutes }: { byline: string; minutes: string }) {

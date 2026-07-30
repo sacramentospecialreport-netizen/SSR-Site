@@ -23,6 +23,7 @@ export default function TarasBatyrPage() {
           <div className="taras-status"><i /> Location unverified</div>
         </article>
         <div className="hub-link-cloud taras-paths">
+          <Link href="/artifact-files">Open artifact registry</Link>
           <Link href="/home/truth">Read the complete Truth file</Link>
           <Link href="/home/drought-watch">Return to Drought Watch</Link>
           <Link href="/stories/the-guru-of-news-interview">Consult the Guru of News</Link>

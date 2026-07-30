@@ -164,10 +164,46 @@ const showVideoTitles: Record<string, string> = {
 const unavailableShowVideos = new Set(["EDcVcQ9kq38", "5Lmwg7VwtFc"]);
 
 const summaryOverrides: Record<string, string> = {
+  "/home/truth":
+    "A meditation on knowing, tasting and the price of certainty, presented by Sacramento Special Report's resident Guru.",
+  "/home/drought-watch":
+    "River levels, atmospheric developments and unconventional responses to California's water crisis.",
+  "/home/safety-quiz":
+    "An official SSR examination of practical judgment, neighborhood awareness and flashlight preparedness.",
+  "/home/public-safety-survey-results":
+    "Sacramento speaks on police, parking, language and the unresolved matter of street kitties.",
+  "/home/user-feedback":
+    "A direct line into the SSR newsroom for observations, objections and intimate conversation.",
   "/stories":
     "The full Sacramento Special Report street file: breaking developments, investigations, public warnings and matters of local consequence.",
   "/stories/14-brutal-truths-about-sacramento-ai":
     "An uncompromising field guide to Sacramento, California and several subjects that became unavoidable along the way.",
+  "/stories/convention-watch":
+    "Dispatches, interviews and moving images recovered from Sacramento's convention floors.",
+  "/stories/local-artist-spotlight":
+    "Working artists, unusual practices and the creative figures shaping Sacramento.",
+  "/stories/local-artist-spotlight/upcoming-events":
+    "Selected cultural events and public appearances from the SSR Arts & Culture desk.",
+  "/stories/local-artist-spotlight/featured-artists":
+    "Original video profiles of Sacramento artists and the work taking shape around them.",
+  "/shows":
+    "The Sacramento Special Report broadcast schedule and preserved programs from across the network.",
+  "/hot-street":
+    "Markets, cryptocurrency and public-safety instruments from the more volatile side of the newsroom.",
+  "/hot-street/hot-street-finance":
+    "Live market instruments, charts and technical indicators monitored by the Hot Street desk.",
+  "/hot-street/hot-street-crypto":
+    "Cryptocurrency prices, screeners and currency heat maps from the Hot Street terminal.",
+  "/hot-street/hot-street-crime":
+    "An interactive view of reported incidents and public-safety activity around Sacramento.",
+  "/about":
+    "The mission, history and institutional character of Sacramento Special Report.",
+  "/about/the-team":
+    "Meet the reporters, technicians and newsroom figures responsible for bringing Sacramento the facts.",
+  "/about/headquarters":
+    "A guided look inside Sacramento Special Report's newsroom and administrative complex.",
+  "/live":
+    "Current and recovered field transmissions from Sacramento Special Report.",
 };
 
 export const legacyContentPages = importedPages as LegacyContentPage[];
@@ -315,7 +351,5 @@ export function getRelatedLegacyPages(page: LegacyContentPage) {
 
 export function getLegacySummary(page: LegacyContentPage) {
   if (summaryOverrides[page.path]) return summaryOverrides[page.path];
-  const sections = getLegacyTextSections(page);
-  const firstParagraph = sections.flat().find((block) => block.length > 70);
-  return firstParagraph ?? `Original Sacramento Special Report coverage from ${getLegacySection(page)}.`;
+  return `Original SSR reporting on “${getLegacyTitle(page)},” preserved from the ${getLegacySection(page)} desk.`;
 }
