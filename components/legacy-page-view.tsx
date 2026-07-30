@@ -153,10 +153,30 @@ function HotStreetProgramming() {
   );
 }
 
+function splitNumberedBlock(block: string) {
+  const match = block.match(/^(\d+)\.\s+([\s\S]+)$/);
+  if (!match) return null;
+  const [, number, content] = match;
+  const firstSentence = content.match(/^(.+?[.!?]["']?)\s+([\s\S]+)$/);
+  if (firstSentence && firstSentence[1].length > 20 && content.length > 140) {
+    return {
+      number,
+      heading: firstSentence[1],
+      body: firstSentence[2].trim(),
+    };
+  }
+  return { number, heading: content, body: "" };
+}
+
 export function LegacyPageView({ page }: { page: LegacyContentPage }) {
   const title = getLegacyTitle(page);
   const section = getLegacySection(page);
+  const summary = getLegacySummary(page);
   const flowSections = getLegacyFlowSections(page);
+  const articleFlowSections = flowSections.map((flow) => ({
+    ...flow,
+    blocks: flow.blocks.filter((block) => block.trim() !== summary.trim()),
+  }));
   const related = getRelatedLegacyPages(page);
   const isArts =
     page.path.startsWith("/stories/convention-watch") ||
@@ -175,7 +195,7 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
         <Link className="article-back" href="/">← Back to the front page</Link>
         <p className="kicker">{section}</p>
         <h1>{title}</h1>
-        <p className="legacy-standfirst">{getLegacySummary(page)}</p>
+        <p className="legacy-standfirst">{summary}</p>
         <div className="legacy-provenance">
           <strong>SSR Newsroom</strong>
           <span>Original report</span>
@@ -188,7 +208,7 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
         ) : (
         <div className="legacy-report-grid">
           <article className="legacy-report-copy">
-            {flowSections.map((flow, flowIndex) => (
+            {articleFlowSections.map((flow, flowIndex) => (
               <section className="legacy-flow-section" key={`${page.path}-${flow.index}`}>
                 {flow.images.length > 0 && (
                   <div className={`legacy-inline-images${flow.images.length > 1 ? " legacy-inline-images-grid" : ""}`}>
@@ -204,11 +224,28 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
                   </div>
                 )}
                 {flow.blocks.map((block, blockIndex) => {
+                  const numbered = splitNumberedBlock(block);
+                  if (numbered) {
+                    return (
+                      <div className="legacy-numbered-item" key={`${block}-${blockIndex}`}>
+                        <h2><span>{numbered.number}</span>{numbered.heading}</h2>
+                        {numbered.body && <p className="legacy-article-paragraph">{numbered.body}</p>}
+                      </div>
+                    );
+                  }
+                  const isByline =
+                    flowIndex === 0 &&
+                    blockIndex === 0 &&
+                    block.length < 80 &&
+                    !/[.!?]$/.test(block);
                   const isSubhead =
                     blockIndex === 0 &&
                     flowIndex > 0 &&
-                    block.length < 100 &&
+                    block.length < 120 &&
                     !/[.!?]$/.test(block);
+                  if (isByline) {
+                    return <p className="legacy-inline-byline" key={`${block}-${blockIndex}`}>By {block}</p>;
+                  }
                   if (page.path === "/home/drought-watch" && block.startsWith("Drought Got You Down?")) {
                     return (
                       <p className="legacy-pathway-link" key={block}>
@@ -219,7 +256,20 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
                   if (block.startsWith("NOTHING IN THE SITE CONSTITUTES")) {
                     return <p className="legal-microcopy" key={`${block}-${blockIndex}`}>{block}</p>;
                   }
-                  return isSubhead ? <h2 key={block}>{block}</h2> : <p key={`${block}-${blockIndex}`}>{block}</p>;
+                  if (page.path === "/home/truth" && /taras batyr/i.test(block)) {
+                    return (
+                      <div className="taras-inline-file" key={`${block}-${blockIndex}`}>
+                        <p className="legacy-article-paragraph">{block}</p>
+                        <Link href="/taras-batyr">Open the Taras batyr artifact file →</Link>
+                      </div>
+                    );
+                  }
+                  if (isSubhead) return <h2 key={block}>{block}</h2>;
+                  return (
+                    <p className="legacy-article-paragraph" key={`${block}-${blockIndex}`}>
+                      {block}
+                    </p>
+                  );
                 })}
                 {flow.embeds.length > 0 && (
                   <div className="legacy-inline-embeds">

@@ -163,6 +163,11 @@ const showVideoTitles: Record<string, string> = {
 
 const unavailableShowVideos = new Set(["EDcVcQ9kq38", "5Lmwg7VwtFc"]);
 
+const summaryOverrides: Record<string, string> = {
+  "/stories/14-brutal-truths-about-sacramento-ai":
+    "An uncompromising field guide to Sacramento, California and several subjects that became unavoidable along the way.",
+};
+
 export const legacyContentPages = importedPages as LegacyContentPage[];
 
 export function getLegacyPage(path: string) {
@@ -189,9 +194,9 @@ export function getLegacyTextSections(page: LegacyContentPage) {
   return page.sections
     .map((section) => section.text.trim())
     .filter((text) => text && !text.includes("SACRAMENTO SPECIAL REPORT, SUBSIDIARY"))
-    .map((text, index) => {
+    .map((text) => {
       const blocks = text.split(/\n\s*\n/g).map((block) => block.trim()).filter(Boolean);
-      if (index === 0 && blocks[0] && normalize(blocks[0]) === title) blocks.shift();
+      if (blocks[0] && normalize(blocks[0]) === title) blocks.shift();
       return blocks;
     })
     .filter((blocks) => blocks.length);
@@ -219,11 +224,17 @@ function normalizeLegacyEmbed(
     const replacements: Record<string, string> = {
       H7K6DFzqy_A: "ExvwZYDD0Rs",
       "-Fv1572rMNc": "tWqRjVM26fA",
+      EDcVcQ9kq38: "o66WDcBVb2c",
+      "5Lmwg7VwtFc": "AGK5NJvYFE0",
+      Ixmw_WhDoxw: "2CS3Xz_ma4M",
     };
     const videoId = replacements[youtube[1]] ?? youtube[1];
     const replacementTitles: Record<string, string> = {
       ExvwZYDD0Rs: "Sac Anime 2023 Convention Coverage",
       tWqRjVM26fA: "Exclusive with Odin Makes",
+      o66WDcBVb2c: "Sacramento's Local Artist Spotlight",
+      AGK5NJvYFE0: "In the Field: Sacramento Weather Machines",
+      "2CS3Xz_ma4M": "SSR Newsroom Archival Footage",
     };
     const title = replacementTitles[videoId] || showVideoTitles[videoId] || frame.title || `SSR video ${index + 1}`;
     if (unavailableShowVideos.has(videoId)) {
@@ -262,7 +273,6 @@ export function getLegacyFlowSections(page: LegacyContentPage): LegacyFlowSectio
       section.text.trim() &&
       !section.text.includes("SACRAMENTO SPECIAL REPORT, SUBSIDIARY"),
   );
-  const firstTextIndex = textSections[0]?.index;
   const frames = page.iframes.filter(
     (frame) => frame.src && !frame.src.includes("drive.google.com/auth_warmup"),
   );
@@ -277,7 +287,7 @@ export function getLegacyFlowSections(page: LegacyContentPage): LegacyFlowSectio
   return [...indices].sort((a, b) => a - b).map((index) => {
     const text = textSections.find((section) => section.index === index)?.text.trim() ?? "";
     const blocks = text.split(/\n\s*\n/g).map((block) => block.trim()).filter(Boolean);
-    if (index === firstTextIndex && blocks[0] && normalize(blocks[0]) === title) blocks.shift();
+    if (blocks[0] && normalize(blocks[0]) === title) blocks.shift();
     return {
       index,
       blocks,
@@ -302,6 +312,7 @@ export function getRelatedLegacyPages(page: LegacyContentPage) {
 }
 
 export function getLegacySummary(page: LegacyContentPage) {
+  if (summaryOverrides[page.path]) return summaryOverrides[page.path];
   const sections = getLegacyTextSections(page);
   const firstParagraph = sections.flat().find((block) => block.length > 70);
   return firstParagraph ?? `Original Sacramento Special Report coverage from ${getLegacySection(page)}.`;

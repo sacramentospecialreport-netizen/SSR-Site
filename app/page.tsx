@@ -173,7 +173,7 @@ export default function Home() {
             <p>Every corridor leads somewhere. Most lead back.</p>
           </div>
           <div className="maze-links">
-            <Link href="/home/truth">Find Taras batyr</Link>
+            <Link href="/taras-batyr">Find Taras batyr</Link>
             <Link href="/home/safety-quiz">Take the quiz</Link>
             <Link href="/stories/the-guru-of-news-interview">Visit the Guru</Link>
             <Link href="/stories/forest-monkies">Enter the forest</Link>
