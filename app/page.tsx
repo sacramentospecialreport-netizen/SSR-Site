@@ -48,7 +48,7 @@ export default function Home() {
           </details>
           <div className="masthead-date">
             <strong>{dateLabel.split(",")[0]}</strong>
-            <span>You heard it here first</span>
+            <span>You Heard It Here First</span>
           </div>
           <Link className="brand" href="/" aria-label="Sacramento Special Report home">
             <img src={`${assetBase}/legacy/ssr-logo.png`} alt="" />
@@ -151,7 +151,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="page-shell footer-grid">
-          <div className="footer-brand"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><p>Sacramento Special Report</p><span>You heard it here first.</span></div>
+          <div className="footer-brand"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><p>Sacramento Special Report</p><span>You Heard It Here First.</span></div>
           <div><h2>Sections</h2><Link href="/home/drought-watch">Drought Watch</Link><Link href="/home/public-safety-survey-results">Public Safety</Link><Link href="/stories/convention-watch">Arts & Culture</Link><Link href="/hot-street">Hot Street</Link></div>
           <div><h2>Company</h2><Link href="/about">About SSR</Link><Link href="/about/the-team">The Team</Link><Link href="/about/headquarters">Headquarters</Link><a href="mailto:press@sacramentospecialreport.org">Contact</a></div>
           <div className="footer-contact"><h2>Newsroom</h2><p>1307 N Street, Suite 231</p><p>Sacramento, CA 95814</p><p>916-259-3843</p></div>
