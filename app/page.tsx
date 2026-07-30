@@ -8,6 +8,7 @@ const dateLabel = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "America/Los_Angeles",
 }).format(new Date());
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 function StoryMeta({ byline, minutes }: { byline: string; minutes: string }) {
   return (
@@ -50,7 +51,7 @@ export default function Home() {
             <span>You heard it here first</span>
           </div>
           <Link className="brand" href="/" aria-label="Sacramento Special Report home">
-            <img src="/legacy/ssr-logo.png" alt="" />
+            <img src={`${assetBase}/legacy/ssr-logo.png`} alt="" />
             <span>Sacramento<b>Special Report</b></span>
           </Link>
           <div className="header-actions">
@@ -78,7 +79,7 @@ export default function Home() {
         <section className="lead-grid" aria-label="Top stories">
           <article className="lead-story">
             <Link className="image-link lead-image" href={`/story/${lead.slug}`}>
-              <img src="/legacy/tower-bridge.jpg" alt="Sacramento Tower Bridge at dusk" />
+              <img src={`${assetBase}/legacy/tower-bridge.jpg`} alt="Sacramento Tower Bridge at dusk" />
               <span className="photo-credit">SSR Archive</span>
             </Link>
             <div className="lead-copy">
@@ -103,7 +104,7 @@ export default function Home() {
                 <StoryMeta byline={tertiary.byline} minutes={tertiary.minutes} />
               </div>
               <Link href={`/story/${tertiary.slug}`}>
-                <img src="/legacy/volunteers.jpg" alt="Volunteers working outdoors" />
+                <img src={`${assetBase}/legacy/volunteers.jpg`} alt="Volunteers working outdoors" />
               </Link>
             </article>
             <article className="brief-story">
@@ -130,9 +131,9 @@ export default function Home() {
           <div className="latest-grid">
             {latestStories.map((story, index) => (
               <article className="latest-card" key={story.slug}>
-                {index === 0 && <img src="/legacy/survey-chart.png" alt="Public survey data visualization" />}
-                {index === 1 && <img src="/legacy/portrait.jpg" alt="Sacramento resident portrait" />}
-                {index === 2 && <div className="weather-card"><img src="/legacy/weather.gif" alt="Northern California weather radar" /></div>}
+                {index === 0 && <img src={`${assetBase}/legacy/survey-chart.png`} alt="Public survey data visualization" />}
+                {index === 1 && <img src={`${assetBase}/legacy/portrait.jpg`} alt="Sacramento resident portrait" />}
+                {index === 2 && <div className="weather-card"><img src={`${assetBase}/legacy/weather.gif`} alt="Northern California weather radar" /></div>}
                 <p className="kicker">{story.section}</p>
                 <h3><Link href={`/story/${story.slug}`}>{story.title}</Link></h3>
                 <p>{story.summary}</p>
@@ -150,7 +151,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="page-shell footer-grid">
-          <div className="footer-brand"><img src="/legacy/ssr-logo.png" alt="" /><p>Sacramento Special Report</p><span>You heard it here first.</span></div>
+          <div className="footer-brand"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><p>Sacramento Special Report</p><span>You heard it here first.</span></div>
           <div><h2>Sections</h2><Link href="/archive#drought">Drought Watch</Link><Link href="/archive#safety">Public Safety</Link><Link href="/archive#culture">Arts & Culture</Link><Link href="/archive#hot-street">Hot Street</Link></div>
           <div><h2>Company</h2><Link href="/archive#about">About SSR</Link><Link href="/archive#about">The Team</Link><Link href="/archive#about">Headquarters</Link><a href="mailto:press@sacramentospecialreport.org">Contact</a></div>
           <div className="footer-contact"><h2>Newsroom</h2><p>1307 N Street, Suite 231</p><p>Sacramento, CA 95814</p><p>916-259-3843</p></div>

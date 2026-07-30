@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { allStories } from "@/content/legacy-pages";
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return allStories.map((story) => ({ slug: story.slug }));
 }
@@ -26,7 +30,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   return (
     <>
       <header className="article-masthead">
-        <Link href="/"><img src="/legacy/ssr-logo.png" alt="" /><span>Sacramento Special Report</span></Link>
+        <Link href="/"><img src={`${assetBase}/legacy/ssr-logo.png`} alt="" /><span>Sacramento Special Report</span></Link>
       </header>
       <main className="article-page">
         <Link className="article-back" href="/">← Back to the front page</Link>

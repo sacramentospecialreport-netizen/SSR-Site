@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { legacyPages } from "@/content/legacy-pages";
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: "Archive",
   description: "The complete Sacramento Special Report legacy site inventory.",
@@ -20,7 +22,7 @@ export default function ArchivePage() {
     <main className="archive-page">
       <header className="archive-header">
         <Link href="/" className="archive-home">← Back to the front page</Link>
-        <img src="/legacy/ssr-logo.png" alt="" />
+        <img src={`${assetBase}/legacy/ssr-logo.png`} alt="" />
         <p>Sacramento Special Report</p>
         <h1>The SSR Archive</h1>
         <span>Every page from the original Sacramento Special Report website, catalogued for migration.</span>
