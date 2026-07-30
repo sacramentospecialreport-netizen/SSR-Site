@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LegacyCarousel } from "@/components/legacy-carousel";
 import { SectionLinks } from "@/components/section-links";
 import {
   getLegacyEmbeds,
@@ -168,6 +169,29 @@ function splitNumberedBlock(block: string) {
   return { number, heading: content, body: "" };
 }
 
+const headquartersCaptions = [
+  { title: "The SSR tower", body: "Sacramento Special Report headquarters, viewed from street level." },
+  { title: "Main conference room", body: "The newsroom's long table for editorial conferences and visiting delegations." },
+  { title: "Consultation room", body: "A smaller meeting room reserved for sensitive sources and difficult conversations." },
+  { title: "Field briefing hall", body: "A sunlit briefing room prepared for correspondents returning from the streets." },
+  { title: "Executive news table", body: "The upper newsroom table, where matters of exceptional consequence are reviewed." },
+];
+
+function getCarouselCaptions(page: LegacyContentPage, blocks: string[], count: number) {
+  if (page.path === "/about/headquarters") return headquartersCaptions.slice(0, count);
+  if (blocks.length >= count * 2) {
+    return Array.from({ length: count }, (_, index) => ({
+      title: blocks[index * 2],
+      body: blocks[index * 2 + 1],
+    }));
+  }
+  const title = getLegacyTitle(page);
+  return Array.from({ length: count }, (_, index) => ({
+    title: `${title} — archive image ${index + 1}`,
+    body: blocks[0] || "From the Sacramento Special Report visual archive.",
+  }));
+}
+
 export function LegacyPageView({ page }: { page: LegacyContentPage }) {
   const title = getLegacyTitle(page);
   const section = getLegacySection(page);
@@ -210,7 +234,13 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
           <article className="legacy-report-copy">
             {articleFlowSections.map((flow, flowIndex) => (
               <section className="legacy-flow-section" key={`${page.path}-${flow.index}`}>
-                {flow.images.length > 0 && (
+                {flow.images.length > 1 ? (
+                  <LegacyCarousel
+                    images={flow.images}
+                    captions={getCarouselCaptions(page, flow.blocks, flow.images.length)}
+                    label={`${title} image gallery`}
+                  />
+                ) : flow.images.length === 1 ? (
                   <div className={`legacy-inline-images${flow.images.length > 1 ? " legacy-inline-images-grid" : ""}`}>
                     {flow.images.map((image, imageIndex) => (
                       <figure key={`${image.src}-${imageIndex}`}>
@@ -222,8 +252,8 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
                       </figure>
                     ))}
                   </div>
-                )}
-                {flow.blocks.map((block, blockIndex) => {
+                ) : null}
+                {(page.path === "/stories" && flow.images.length > 1 ? [] : flow.blocks).map((block, blockIndex) => {
                   const numbered = splitNumberedBlock(block);
                   if (numbered) {
                     return (
@@ -233,14 +263,18 @@ export function LegacyPageView({ page }: { page: LegacyContentPage }) {
                       </div>
                     );
                   }
+                  const bylineWords = block.trim().split(/\s+/);
                   const isByline =
                     flowIndex === 0 &&
                     blockIndex === 0 &&
-                    block.length < 80 &&
-                    !/[.!?]$/.test(block);
+                    bylineWords.length >= 2 &&
+                    bylineWords.length <= 4 &&
+                    block.length < 60 &&
+                    !/[.!?]$/.test(block) &&
+                    !/\b(latest|from|the|stories|shows|watch|headquarters|results)\b/i.test(block);
                   const isSubhead =
                     blockIndex === 0 &&
-                    flowIndex > 0 &&
+                    (flowIndex > 0 || page.path === "/stories") &&
                     block.length < 120 &&
                     !/[.!?]$/.test(block);
                   if (isByline) {

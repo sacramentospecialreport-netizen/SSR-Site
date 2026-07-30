@@ -164,6 +164,8 @@ const showVideoTitles: Record<string, string> = {
 const unavailableShowVideos = new Set(["EDcVcQ9kq38", "5Lmwg7VwtFc"]);
 
 const summaryOverrides: Record<string, string> = {
+  "/stories":
+    "The full Sacramento Special Report street file: breaking developments, investigations, public warnings and matters of local consequence.",
   "/stories/14-brutal-truths-about-sacramento-ai":
     "An uncompromising field guide to Sacramento, California and several subjects that became unavoidable along the way.",
 };
