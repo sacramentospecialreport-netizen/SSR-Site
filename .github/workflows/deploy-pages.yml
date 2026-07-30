@@ -41,8 +41,8 @@ jobs:
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
-          NEXT_PUBLIC_BASE_PATH: /SSR-Site
-          NEXT_PUBLIC_SITE_URL: https://sacramentospecialreport-netizen.github.io
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_SITE_URL: https://www.sacramentospecialreport.org
         run: pnpm exec next build
 
       - name: Upload Pages artifact
